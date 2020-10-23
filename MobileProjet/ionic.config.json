@@ -1,0 +1,7 @@
+{
+  "name": "MobileProjet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
