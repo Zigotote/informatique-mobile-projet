@@ -15,6 +15,9 @@ import {
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import SessionListPage from "./pages/SessionListPage";
+import NotePage from "./pages/NotesPage";
+import SpeakersListPage from "./pages/SpeakersListPage";
+import SpeakerPage from "./pages/SpeakerPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -35,6 +38,8 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import styles from "./App.module.css";
+import SessionPage from "./pages/SessionPage";
+import AboutMyPhone from "./pages/AboutMyPhone";
 const App: React.FC = () => (
   <IonApp>
     <IonMenu side="end" menuId="burger_menu" content-id="content">
@@ -48,7 +53,8 @@ const App: React.FC = () => (
       <IonContent>
         <IonList>
           <IonItem routerLink="/sessionlist">Sessions</IonItem>
-          <IonItem>Présentations</IonItem>
+          <IonItem routerLink="/speakerlist">Présentateurs</IonItem>
+          <IonItem routerLink="/aboutmyphone">A propos</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
@@ -56,6 +62,11 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
         <Route path="/sessionlist" component={SessionListPage} exact={true} />
+        <Route path="/session/:id" component={SessionPage} exact={true} />
+        <Route path="/speaker/:id" component={SpeakerPage} exact={true} />
+        <Route path="/speakerlist" component={SpeakersListPage} exact={true} />
+        <Route path="/notesession/:id" component={NotePage} exact={true} />
+        <Route path="/aboutmyphone" component={AboutMyPhone} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>

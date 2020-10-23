@@ -5,6 +5,7 @@ export default class Session {
   private _title: string;
   private _titleMobile: string;
   private _description: string;
+  private _type: string;
   private _image: string;
   private _tracks: Array<Track>;
   private _category: string;
@@ -18,6 +19,7 @@ export default class Session {
     title: string,
     titleMobile: string,
     description: string,
+    type: string,
     image: string,
     tracks: Array<Track>,
     category: string,
@@ -30,6 +32,7 @@ export default class Session {
     this._title = title;
     this._titleMobile = titleMobile;
     this._description = description;
+    this._type = type;
     this._image = image;
     this._tracks = tracks;
     this._category = category;
@@ -69,6 +72,14 @@ export default class Session {
 
   set description(value) {
     this._description = value;
+  }
+
+  get type() {
+    return this._type;
+  }
+
+  set type(value) {
+    this._type = value;
   }
 
   get image() {
