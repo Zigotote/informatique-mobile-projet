@@ -9,6 +9,7 @@ import {
   IonTitle,
   IonToolbar,
   IonLabel,
+  IonItem,
 } from "@ionic/react";
 import HeaderComponent from "../components/HeaderComponent";
 import React, { useState } from "react";
@@ -34,10 +35,15 @@ const Home: React.FC = () => {
       <HeaderComponent title="Conférence" />
 
       <IonImg src="assets/maxresdefault.jpg" className={styles["home-img"]} />
-      <IonLabel>
-        {start} --- {end}
-      </IonLabel>
-      <IonButton expand="full" color="primary">
+      <IonItem>
+        <IonLabel class="ion-text-center">
+          <h1>Conférence</h1>
+          <p>
+            {start} - {end}
+          </p>
+        </IonLabel>
+      </IonItem>
+      <IonButton expand="full" color="primary" routerLink="/sessionlist">
         Voir les sessions
       </IonButton>
       <IonButton expand="full" color="primary">

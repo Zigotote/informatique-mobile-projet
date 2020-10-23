@@ -30,6 +30,54 @@ export default class Blog {
   }
 
   set id(value) {
-    this._date = value;
+    this._id = value;
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(value) {
+    this._title = value;
+  }
+
+  get posted() {
+    return this._posted;
+  }
+
+  set posted(value) {
+    this._posted = value;
+  }
+
+  get primaryColor() {
+    return this._primaryColor;
+  }
+
+  set primaryColor(value) {
+    this._primaryColor = value;
+  }
+
+  get secondaryColor() {
+    return this._secondaryColor;
+  }
+
+  set secondaryColor(value) {
+    this._secondaryColor = value;
+  }
+
+  get image() {
+    return this._image;
+  }
+
+  set image(value) {
+    this._image = value;
+  }
+
+  get brief() {
+    return this._brief;
+  }
+
+  set brief(value) {
+    this._brief = value;
   }
 }

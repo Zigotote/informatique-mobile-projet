@@ -7,12 +7,14 @@ import {
   IonItem,
   IonList,
   IonMenu,
+  IonRouterLink,
   IonRouterOutlet,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
+import SessionListPage from "./pages/SessionListPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -32,18 +34,20 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-
+import styles from "./App.module.css";
 const App: React.FC = () => (
   <IonApp>
     <IonMenu side="end" menuId="burger_menu" content-id="content">
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle>Conférence</IonTitle>
-        </IonToolbar>
+        <IonRouterLink routerLink="/home">
+          <IonToolbar color="primary">
+            <IonTitle>Conférence</IonTitle>
+          </IonToolbar>
+        </IonRouterLink>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem>Sessions</IonItem>
+          <IonItem routerLink="/sessionlist">Sessions</IonItem>
           <IonItem>Présentations</IonItem>
         </IonList>
       </IonContent>
@@ -51,6 +55,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
+        <Route path="/sessionlist" component={SessionListPage} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>
